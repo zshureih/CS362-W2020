@@ -29,7 +29,7 @@ supply_order = testUtility.GetSupplyOrder()
 supply = testUtility.getSupply(box, 10)
 
 #The supply always has these cards
-testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, 0, 0, 0, nC) #testing games with no victory cards (bug introduced)
+testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, 1, 1, 1, nC) #testing games with no victory cards (bug introduced)
 
 #initialize the trash
 trash = []
