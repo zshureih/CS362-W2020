@@ -33,7 +33,7 @@ supply = defaultdict(list,[(k,box[k]) for k in random10])
 
 
 #The supply always has these cards
-testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, nV, nV, 0, nC)
+testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, 0, 0, 0, nC) #testing games with no victory cards (bug introduced)
 
 #initialize the trash
 trash = []
