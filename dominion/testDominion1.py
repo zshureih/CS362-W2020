@@ -8,7 +8,7 @@ Created on Sat Jan 18 15:42:42 2020
 import Dominion
 import random
 import testUtility as testUtility
-from collections import defaultdict
+
 
 #Get player names
 player_names = ["Annie","*Ben","*Carla"]
@@ -26,10 +26,7 @@ box = testUtility.GetBoxes(nV)
 supply_order = testUtility.GetSupplyOrder()
 
 #Pick 10 cards from box to be in the supply.
-boxlist = [k for k in box]
-random.shuffle(boxlist)
-random10 = boxlist[:1] #bug introduced, only 1 randon card is picked from box, so supply only has one kind of item
-supply = defaultdict(list,[(k,box[k]) for k in random10])
+supply = testUtility.getSupply(box, 1) #bug introduced, only 1 randon card is picked from box, so supply only has one kind of item
 
 #The supply always has these cards
 testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, nV, nV, nV, nC)

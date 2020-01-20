@@ -1,4 +1,6 @@
 import Dominion
+import random
+from collections import defaultdict
 
 def GetBoxes(nV):
     box = {}
@@ -42,6 +44,12 @@ def GetSupplyOrder():
                 
     return supplyOrder
     
+def getSupply(box, n):
+    boxlist = [k for k in box]
+    random.shuffle(boxlist)
+    random10 = boxlist[:n] 
+    return defaultdict(list,[(k,box[k]) for k in random10])
+
 def fillSupply(supply, numCopper, numSilver, numGold, numEstate, numDuchy, numProvince, numCurse):
     supply["Copper"]=[Dominion.Copper()]*numCopper
     supply["Silver"]=[Dominion.Silver()]*numSilver
