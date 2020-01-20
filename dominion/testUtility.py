@@ -41,6 +41,7 @@ def GetSupplyOrder():
                 }
                 
     return supplyOrder
+    
 def fillSupply(supply, numCopper, numSilver, numGold, numEstate, numDuchy, numProvince, numCurse):
     supply["Copper"]=[Dominion.Copper()]*numCopper
     supply["Silver"]=[Dominion.Silver()]*numSilver
@@ -49,3 +50,14 @@ def fillSupply(supply, numCopper, numSilver, numGold, numEstate, numDuchy, numPr
     supply["Duchy"]=[Dominion.Duchy()]*numDuchy
     supply["Province"]=[Dominion.Province()]*numProvince
     supply["Curse"]=[Dominion.Curse()]*numCurse
+
+def getPlayerList(player_names):
+    players = []
+    for name in player_names:
+        if name[0]=="*":
+            players.append(Dominion.ComputerPlayer(name[1:]))
+        elif name[0]=="^":
+            players.append(Dominion.TablePlayer(name[1:]))
+        else:
+            players.append(Dominion.Player(name))
+    return players

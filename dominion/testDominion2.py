@@ -39,14 +39,7 @@ testUtility.fillSupply(supply, (60-len(player_names)*7), 40, 30, nV, nV, 0, nC)
 trash = []
 
 #Costruct the Player objects
-players = []
-for name in player_names:
-    if name[0]=="*":
-        players.append(Dominion.ComputerPlayer(name[1:]))
-    elif name[0]=="^":
-        players.append(Dominion.TablePlayer(name[1:]))
-    else:
-        players.append(Dominion.Player(name))
+players = testUtility.getPlayerList(player_names)
 
 #Play the game
 turn  = 0
