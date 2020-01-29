@@ -59,7 +59,6 @@ random.shuffle(boxlist)
 random10 = boxlist[:10]
 supply = defaultdict(list,[(k,box[k]) for k in random10])
 
-
 #The supply always has these cards
 supply["Copper"]=[Dominion.Copper()]*(60-len(player_names)*7)
 supply["Silver"]=[Dominion.Silver()]*40
